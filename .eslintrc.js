@@ -8,6 +8,7 @@ module.exports = {
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
+      tsx: true,
     },
     ecmaVersion: "latest",
     sourceType: "module",
@@ -37,7 +38,7 @@ module.exports = {
   },
   settings: {
     react: {
-      version: "latest",
+      version: "detect",
     },
   },
 };
