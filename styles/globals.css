@@ -13,3 +13,48 @@ body {
   width: 100vw;
   height: 100vh;
 }
+
+@layer components {
+  .paragraph {
+    @apply text-dark text-xs md:text-nav leading-5 opacity-[.85] md:opacity-100  font-medium mb-6;
+  }
+
+  .section-title {
+    @apply md:text-h2 text-4xl font-semibold text-primary md:mb-4;
+  }
+}
+
+.cards {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+@media screen and (min-width: 640px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 639px) {
+  .card {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .card {
+    width: 300px;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .cards {
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .card {
+    width: 350px;
+  }
+}

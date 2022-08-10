@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React, { FC } from "react";
 
@@ -17,16 +18,24 @@ type Ticon = {
 const Button: FC<Ibutton> = ({ text, icon, url, variant = "primary" }) => {
   return (
     <button
-      className={`flex items-center justify-between py-3 px-6 rounded-lg space-x-[10px] ${
+      className={`py-3 px-3  flex items-center justify-between   rounded-lg space-x-[10px] ${
         variant === "primary"
           ? "bg-primary ring-0 text-white"
           : "bg-opacity-0 ring-[2px] ring-primary text-dark"
-      } hover:scale-95`}
+      } hover:scale-95 lg:py-3 lg:px-6`}
     >
       <Link href={url} className="font-semibold font-poppin text-h4">
         <a>{text}</a>
       </Link>
-      {icon && <img className="inline-block h-[20px]" src={icon.src} alt="" />}
+      {icon && (
+        <Image
+          width={20}
+          height={20}
+          className="inline-block h-[20px]"
+          src={icon.src}
+          alt=""
+        />
+      )}
     </button>
   );
 };

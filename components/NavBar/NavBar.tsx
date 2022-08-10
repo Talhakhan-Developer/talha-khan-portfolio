@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FC, useEffect, useState } from "react";
+import { cross, hamburger } from "../../icons";
 
 const NavBar: FC = () => {
   const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
@@ -27,7 +28,7 @@ const NavBar: FC = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-screen bg-[#eeeeee] h-nav ${
+      className={`fixed top-0 left-0 w-screen z-50 bg-[#eeeeee] h-nav ${
         isScrolled ? "shadow-md" : ""
       }`}
     >
@@ -35,7 +36,7 @@ const NavBar: FC = () => {
         <h1 className="font-poppin text-[20px] font-semibold text-primary">
           Talha Khan.
         </h1>
-        {/* navigation menu for tablet and desktop devices*/}
+        {/* navigation menu for desktop devices*/}
         <ul className="hidden justify-between items-center gap-4 font-semibold text-nav font-poppin text-dark transition md:flex">
           <li>
             <Link href="/">
@@ -65,7 +66,7 @@ const NavBar: FC = () => {
         </ul>
         {/* Hamburger Menu */}
         <button onClick={handleClick} className="block md:hidden">
-          <Image src="/icons/hamburger.svg" alt="" width={20} height={20} />
+          <Image src={hamburger} alt="" width={20} height={20} />
         </button>
 
         {/* Navigation Menu for mobile */}
@@ -77,33 +78,33 @@ const NavBar: FC = () => {
           <button onClick={handleClick} className="absolute top-7 right-8">
             <Image
               className="relative "
-              src="/icons/cross.svg"
+              src={cross}
               alt=""
               width={15}
               height={15}
             />
           </button>
-          <li>
+          <li onClick={handleClick}>
             <Link href="/">
               <a className="hover:text-primary">Home</a>
             </Link>
           </li>
-          <li>
+          <li onClick={handleClick}>
             <Link href="#about">
               <a className="hover:text-primary">About me</a>
             </Link>
           </li>
-          <li>
+          <li onClick={handleClick}>
             <Link href="">
               <a className="hover:text-primary">Services</a>
             </Link>
           </li>
-          <li>
+          <li onClick={handleClick}>
             <Link href="">
               <a className="hover:text-primary">Project&apos;s</a>
             </Link>
           </li>
-          <li>
+          <li onClick={handleClick}>
             <Link href="">
               <a className="hover:text-primary">Contact</a>
             </Link>
