@@ -26,6 +26,7 @@ module.exports = {
       h2: "32px",
       h3: "24px",
       nav: "18px",
+      h4: "16px",
     },
     height: {
       nav: "65px",
